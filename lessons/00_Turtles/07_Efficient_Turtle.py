@@ -8,7 +8,7 @@ can draw a square, pentagon, and hexagon with a single function
 
 
 import turtle                           # Tell Python we want to work with the turtle
-turtle.setup (width=600, height=600;)    # Set the size of the window
+turtle.setup (width=600, height=600)    # Set the size of the window
 
 tina = turtle.Turtle()                  # Create a turtle named tina
 
@@ -23,19 +23,22 @@ tina.speed(2)                           # Make the turtle move as fast, but not 
         #tina.forward(150)
         #tina.left(angle)
         
-def shape_draw(sides, angle):
+def draw_polygon(sides):
+    angle = 360/sides
     for i in range(sides):
-        tina.forward(120)
+        tina.forward(50)
         tina.left(angle)
-sides = 60
-angle = 360/sides
 
-
-draw_polygon(5)                        # Draw a square
-
+for j in range(3, 11):
+    draw_polygon(j)                        # Draw a square
+for j in range(15, 18):
+    draw_polygon(j)
 ...                                      # Move tina to another spot on the screen
 
-#draw_polygon(...)                        # Draw a pentagon
+tina.penup()
+tina.goto(0, -120)
+tina.pendown()
+draw_polygon(7)                        # Draw a pentagon
 
 ...                                      # Move tina to another spot on the screen
 
