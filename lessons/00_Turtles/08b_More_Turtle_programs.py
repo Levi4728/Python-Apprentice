@@ -32,7 +32,7 @@ turtle.setup(width=600, height=600)     # Set the size of the window
 tina = turtle.Turtle()                  # Create a turtle named tina
 
 screen = turtle.Screen()                # Get the screen that tina is on
-set_background_image(screen, "emoji.png") # Set the background image of the screen
+set_background_image(screen, "USA Flag GIF.gif") # Set the background image of the screen
 
 
 def set_turtle_image(turtle, image_name):
@@ -48,22 +48,22 @@ def set_turtle_image(turtle, image_name):
 
 # Set up the screen
 screen = turtle.Screen()
-screen.setup(width=600, height=600)
+screen.setup(width=600, height=326)
 
 # Create a turtle and set its shape to the custom GIF
 b = turtle.Turtle()
 bi = turtle.Turtle()
 set_turtle_image(b, "Bluey image GIF.gif")
 set_turtle_image(bi, "Bingo image GIF.gif")
-b.penup()
+b.pendown()
 b.speed(1)
-bi.penup()
+bi.pendown()
 bi.speed(1)
-for i in range(4):
-    b.goto(50, 50)
-    b.goto(-50, -50)
-    bi.goto(100, 100)
-    bi.goto(-100,100)
-
-
+def draw_polygon(sides):
+    angle = 360/sides
+    for i in range(sides):
+        tina.forward(50)
+        tina.left(angle)
 turtle.exitonclick()
+
+
