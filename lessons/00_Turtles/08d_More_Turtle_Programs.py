@@ -60,36 +60,3 @@ scr.onkeypress(lft, "Left")
 scr.onkeypress(bd, "Down")
 scr.onkeypress(fd, "Up")
 
-
-import math
-
-t = turtle.Turtle()
-t.shape('turtle')
-t.speed(2)
-
-scr = turtle.Screen()
-scr.setup(width=600, height=600)
-
-# Ask the user for input
-points = int(input("How many points should the star have? "))
-outer = int(input("Length of outer spikes? "))
-inner = int(input("Length of inner spikes? "))
-
-# Define the drawing function
-def draw_star(points, outer_size, inner_size):
-    angle = 360 / (points * 2)
-    for i in range(points * 2):
-        if i % 2 == 0:
-            t.forward(outer_size)
-        else:
-            t.forward(inner_size)
-        t.right(angle)
-
-# 🟢 Actually call the function to draw the star!
-draw_star(points, outer, inner)
-
-turtle.done()
-
-
-scr.listen()
-turtle.done()
